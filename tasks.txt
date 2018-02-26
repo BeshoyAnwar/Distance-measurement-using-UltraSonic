@@ -1,0 +1,21 @@
+/*Peter*/
+void portA_init(void);//all pins as digital out				
+void displayOnSeg3(char digit3);//take an char digit3 to show it on Seg3
+
+/*Menna*/
+void portB_init(void);//all pins as digital out
+void displayOnSeg1(char digit1);//take an char digit1 to show it on Seg1
+
+/*Boula*/
+void portE_init(void);//all pins as digital out
+void displayOnSeg2(char digit2);//take an char digit2 to show it on Seg2
+
+/*Beshoy*/
+void portF_init(void);//pin 0 as digital in & pins 2,3,4 as digitalout With enable pullup for pin 0
+void portD_init(void);
+
+
+/*non assigned*/
+void delay_ms(unint16_t milliseconds);//initiate systick timer ,take in your consideration the max of systick timer is 1.04 sec but we need more than it
+void showOnDisplays(unint16_t distance);// the distance in cm separate it into 3 digits ,each digit show it on 7_segment display note that our displays is active low mode
+unint16_t measure_distance_cm(void);//use the ultrasonic sensor to measure the distance between the Sensor and first object blocked the sonic waves and return it in cm
