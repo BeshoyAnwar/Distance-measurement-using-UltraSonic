@@ -1,5 +1,5 @@
-void init(){
-//portB
+void portB_init(void){
+
 	SYSCTL_RCGCGPIO_R |= 0x00000002; //SYSCTL_RCGCGPIO_R1 instead but it gives an ERROR!!
   while((SYSCTL_RCGCGPIO_R & 0x00000002) == 0 ) {};
 	GPIO_PORTB_LOCK_R=0x4C4F434B;
