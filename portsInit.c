@@ -25,3 +25,19 @@ void delay_ms(int delay){
 	TIMER0_CTL_R|=1;//timer enabled and counting starts
 	while(!TIMER0_RIS_R&1);//wait to finish the interval
 }
+void portFInit(void){
+	/* initiating portF with pins 0,4   digital in with pull up 
+				 pins 1,2,3 digital out                */
+	SYSCTL_RCGCGPIO_R|=0x20;//enable clk to port f
+	while(!(SYSCTL_PRGPIO_R&0x20));// loop until clk connected to port f
+	
+	GPIO_PORTF_LOCK_R=0x4C4F434B;//to unlock the port f
+	GPIO_PORTF_CR_R|=0x1f;// to activate unlock to port f pins
+	
+	GPIO_PORTF_DIR_R|=0x0e;// set pin 0,4 as in and 1:3 as out
+	GPIO_PORTF_AFSEL_R=0;// reset the alternate functions for pins 0:4
+	GPIO_PORTF_PUR_R =0x11;// enable pullup resistors to pin 0,4
+	GPIO_PORTF_DEN_R|=0x1f;// set port f pins 0 to 4 as digital
+	GPIO_PORTF_AMSEL_R|=0;// reset analog mode for pins 0:4
+	
+}
