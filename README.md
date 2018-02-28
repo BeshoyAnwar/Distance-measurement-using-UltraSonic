@@ -10,4 +10,5 @@ https://www.google.com.eg/search?q=common+anode+7+segment+display&tbm=isch&sourc
 
 for all tasks
 
-              see https://github.com/MennaAbdallah/Microprocessing_Project-1/blob/master/tasks.txt
+              see 
+              https://github.com/MennaAbdallah/Microprocessing_Project-1/blob/master/tasks.txt
