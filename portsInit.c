@@ -22,7 +22,7 @@ void portBInit(void){
 	GPIO_PORTB_PCTL_R=0;
 	GPIO_PORTB_AMSEL_R=0;
 	GPIO_PORTB_DEN_R=0xFF;
-	GPIO_PORTC_PUR_R=0;
+	GPIO_PORTB_PUR_R=0;
 }
 void portFInit(void){
 	/* initiating portF with pins 0,4   digital in with pull up 
