@@ -50,3 +50,17 @@ void displayOnSeg3(char digit3)
 	}
 	
 }
+
+void showOnDisplays(uint16_t distance)
+{
+	char digit1 , digit2 , digit3 ;
+	
+	digit3 = distance /100;
+	digit2 = distance /10 - digit3*10;
+	digit1 = distance  - digit2*10 - digit3*100 ;
+	digit1+='0'; digit2+='0'; digit3+='0';
+	displayOnSeg1(digit1);//take an char digit3 to show it on Seg1
+	displayOnSeg2(digit2);//take an char digit3 to show it on Seg2
+	displayOnSeg3(digit3);//take an char digit3 to show it on Seg3
+	
+}
