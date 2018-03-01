@@ -92,17 +92,17 @@ void displayOnSeg3(unsigned char digit3)
 			GPIO_PORTE_DATA_R &= 0xF8 ; // portE mask 1111 1000
 			GPIO_PORTD_DATA_R &= 0xFF ; // portD mask 1111 1111
 			break;
-		case '8' : // kolo =D
+		case '8' : // a, b, c, d, e, f, g 
 			GPIO_PORTE_DATA_R &= 0xC0 ; // portE mask 1100 0000
 			GPIO_PORTD_DATA_R &= 0xFE ; // portD mask 1111 1110
 			break;
-		case '9' : //kolo without e
+		case '9' : //a , b, c, d , f , g
 			GPIO_PORTE_DATA_R &= 0xD0 ; // portE mask 1101 0000
 			GPIO_PORTD_DATA_R &= 0xFE ; // portD mask 1111 1110
 			break;
-		default :
-			GPIO_PORTE_DATA_R |= 0x3F ; // portE mask 0011 1111
-			GPIO_PORTD_DATA_R |= 0x01 ; // portD mask 0000 0001
+		default : //case'0' a, b, c, d, e, f
+			GPIO_PORTE_DATA_R &= 0xC0 ; // portE mask 1100 0000
+			GPIO_PORTD_DATA_R &= 0xFE ; // portD mask 1111 1111
 			break;
 		
 		
