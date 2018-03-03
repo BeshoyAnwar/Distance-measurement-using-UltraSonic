@@ -1,4 +1,4 @@
-int Timer1Init(void)//initiate timer1 as periodic with up counting to 0xffff.ffff
+uint64_t Timer1Init(void)//initiate timer1 as periodic with up counting to 0xffff.ffff
 {
 int CurrentTime;
 int x=0;//dummy variable
@@ -19,5 +19,4 @@ while((GPIO_PORTD_DATA_R & 0x01)==0); //D0 is Low
 	CurrentTime=TIMER0_TAV_R; //get the current value of the timer
 	TIMER0_CTL_R&=~1; // disable the timer
 	return CurrentTime;
-
 }
