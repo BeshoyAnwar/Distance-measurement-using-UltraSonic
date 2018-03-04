@@ -1,4 +1,4 @@
-#include "G:\engineering_programs\keilv4\EE319Kware\inc\tm4c123gh6pm.h"
+#include "..\EE319Kware\inc\tm4c123gh6pm.h"/*change .. to the path of your kiel setup*/
 #include "stdint.h"
 #include "portsInit.h"
 #include "measureDistance.h"
