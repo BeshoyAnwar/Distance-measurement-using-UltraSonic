@@ -1,5 +1,3 @@
-#define GPIO_PORTB_DATA_R       (*((volatile unsigned long *)0x400053FC))
-
 void displayOnSeg2(unsigned char digit2) {
 
     /*
