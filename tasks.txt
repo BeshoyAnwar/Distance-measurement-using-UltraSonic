@@ -1,0 +1,20 @@
+/*Peter*/
+void portAInit(void);//all pins as digital out				
+void displayOnSeg3(unsigned char digit3);//take an char digit3 to show it on Seg3
+void showOnDisplays(uint16_t distance);// the distance in cm separate it into 3 digits ,each digit show it on 7_segment display note that our displays is active low mode
+
+/*Menna*/
+void portBInit(void);//all pins as digital out
+void displayOnSeg1(unsigned char digit1);//take an char digit1 to show it on Seg1
+void Timer1Init(void);//initiate timer1 as periodic with up counting to 0xffff.ffff
+
+/*Boula*/
+void portEInit(void);//all pins as digital out
+void displayOnSeg2(unsigned char digit2);//take an char digit2 to show it on Seg2
+void portDInit(void);//pin 0 as digital in with enabling the pull down resistor,pin 1 as digital out
+
+/*Beshoy*/
+void portF_iInit(void);//pin 0 as digital in & pins 2,3,4 as digitalout With enable pullup for pin 0
+void PLLInit(void);//set the clk freq to be 80MHz
+void delay_ms(unsigned int delay);//using clk freq 80M will make adelay with unit of mseconds
+uint16_t measureDistance_cm(void);//use the ultrasonic sensor to measure the distance between the Sensor and first object blocked the sonic waves and return it in cm
