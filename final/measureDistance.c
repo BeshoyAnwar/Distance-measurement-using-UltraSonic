@@ -1,8 +1,8 @@
-#include "G:\engineering_programs\keilv4\EE319Kware\inc\tm4c123gh6pm.h"
+#include "C:\Keil\EE319Kware\inc\tm4c123gh6pm.h"
 #include "stdint.h"
-void delay_us(int delay){
+void delay_us(uint32_t delay){
 	/* using clk freq 80M will make adelay with unit of useconds */
-	int x=0;//dummy variable
+	uint8_t x=0;//dummy variable
 	SYSCTL_RCGCTIMER_R|=1;//connect the timer to clk
 	x+=5;//make sure the clk is connected
 	TIMER0_CTL_R&=~1;//disable the timer to configure it
@@ -32,7 +32,7 @@ uint64_t pulseInHigh(void)
 {
 	//initiate timer0 as periodic with up counting to 0xffff.ffff
 	uint64_t CurrentTime_us;
-	int x=0;//dummy variable
+	uint8_t x=0;//dummy variable
 	while((GPIO_PORTD_DATA_R & 0x4)==0); //D2 is Low
 
 	SYSCTL_RCGCTIMER_R|=1;//connect the timer to clk

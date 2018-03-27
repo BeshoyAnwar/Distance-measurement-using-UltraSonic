@@ -1,4 +1,4 @@
-#include "G:\engineering_programs\keilv4\EE319Kware\inc\tm4c123gh6pm.h"
+#include "C:\Keil\EE319Kware\inc\tm4c123gh6pm.h"
 #include "stdint.h"
 void portAInit(void)
 {
@@ -33,14 +33,14 @@ void portDInit(void) {
 	while( (SYSCTL_PRGPIO_R & 0x08) == 0);
 
 	// GPIO_PORTD_LOCK_R = 0x4C4F434B; // port d doesn't need it.
-	// GPIO_PORTD_CR_R |= 0x0C; // allow changes to pins d3=>d2
-	GPIO_PORTD_AMSEL_R &= ~0x0C; // disable analog
-	GPIO_PORTD_AFSEL_R &= ~0x0C; // not alternative
+	// GPIO_PORTD_CR_R |= 0x4C; // allow changes to pins d3=>d2
+	GPIO_PORTD_AMSEL_R &= ~0x4C; // disable analog
+	GPIO_PORTD_AFSEL_R &= ~0x4C; // not alternative
 	GPIO_PORTD_DIR_R &= 0xFB; // set pin 2 as input
-	GPIO_PORTD_DIR_R |= 0x08; // set pin 3 as output
+	GPIO_PORTD_DIR_R |= 0x48; // set pin 3 as output
 	GPIO_PORTD_PCTL_R = 0x00000000; // gpio clear bit pctl
 	GPIO_PORTD_PDR_R |= 0x04;
-	GPIO_PORTD_DEN_R |= 0x0C; // enable pins
+	GPIO_PORTD_DEN_R |= 0x4C; // enable pins
 
 }
 void portEInit(void) {
