@@ -1,4 +1,5 @@
 # Distance measurement using UltraSonic
+we used an ultrasonic sensor to measure the distances in range 2cm:400cm and display it on three 7-segments on TIVA C board
 # Ultrasonic Sensor Module
 Ultrasonic sensor HC-SR04 is used here to measure distance in range of 2cm-400cm with accuracy of 3mm. The sensor module consists of ultrasonic transmitter, receiver and the control circuit. The working principle of ultrasonic sensor is as follows:
 
